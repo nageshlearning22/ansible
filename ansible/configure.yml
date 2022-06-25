@@ -1,0 +1,8 @@
+- name: Reload nginx
+  hosts: all
+  tasks:
+  - name: Replace
+    command: cp nginx.conf /etc/nginx/nginx.conf
+  - name: nginx
+    command: service nginx reload
+      

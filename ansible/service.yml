@@ -1,0 +1,8 @@
+- name: Install nginx
+  hosts: ngdest
+  tasks:
+  - name: start nginx apt
+    service:
+     name: nginx
+     state: started
+    

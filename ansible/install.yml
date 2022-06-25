@@ -1,0 +1,10 @@
+- name: Install nginx
+  hosts: localhost
+  tasks:
+  become: true
+  tasks:
+  - name: Install nginx apt
+    apt:
+     name: nginx
+     state: latest
+    

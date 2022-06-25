@@ -1,0 +1,12 @@
+- name: nginx-automation
+  become: yes
+  hosts: localhost
+  tasks:
+   - name: Install nginx
+     command: ansible-playbook -i myhosts install.yml
+     when: ansible_facts['distribution']=="Ubuntu"
+   - name: Nginx configure yml
+     command: ansible-playbook -i myhosts configure.yml    
+   - name: Nginx service yml
+     command: ansible-playbook -i myhosts service.yml
+   

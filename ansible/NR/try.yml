@@ -1,0 +1,6 @@
+- name: nginx
+  become: yes
+  hosts: all
+  tasks:
+   - name: cat command
+     command: touch /home/nagesh/Desktop/mah.txt

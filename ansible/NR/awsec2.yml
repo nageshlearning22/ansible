@@ -1,0 +1,21 @@
+- hosts: localhost
+  module_defaults:
+    group:
+      aws_access_key: AKIA2JOSI45D7N46OSJN 
+      aws_secret_key: 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 
+      region: us-east-2
+      
+  tasks:    
+      - name: Provision an EC2 instance with a public IP address
+        amazon.aws.ec2_instance:
+         key_name: "nagesh1"
+         instance_type: t2.micro
+         security_group: launch-wizard-7
+         image_id: ami-04505e74c0741db8d
+         vpc_subnet_id: subnet-0b49b9ad74bcdd9cb
+         network:
+          assign_public_ip: true
+         tags:
+          Environment: Testing
+        register: result
+
